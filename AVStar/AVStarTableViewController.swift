@@ -181,14 +181,21 @@ class AVStarTableViewController: UITableViewController {
     // 转场代码
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAVStarDetail" {
+            let row = tableView.indexPathForSelectedRow!.row
+            
+            let destination = segue.destination as! DetailTableViewController
+            
+            destination.avstar = avStars[row]
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         //确定你的操作行数
-        let row = tableView.indexPathForSelectedRow!.row
-        //准备传输值
-        let distination = segue.destination as! AVStarDetailViewController
-        //设定传输值
-        distination.imageName = avStars[row].image
+//        let row = tableView.indexPathForSelectedRow!.row
+//        //准备传输值
+//        let distination = segue.destination as! AVStarDetailViewController
+//        //设定传输值
+//        distination.imageName = avStars[row].image
     }
 
 }

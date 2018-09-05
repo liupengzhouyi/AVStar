@@ -13,6 +13,8 @@
 		0658EE32213E29E30065D2B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658EE30213E29E30065D2B8 /* LaunchScreen.storyboard */; };
 		0658EE3A213E2AF70065D2B8 /* AVStarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658EE39213E2AF70065D2B8 /* AVStarTableViewController.swift */; };
 		06757E2C213FFE9300D93507 /* AVStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06757E2B213FFE9300D93507 /* AVStar.swift */; };
+		06757E2E214016F000D93507 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06757E2D214016F000D93507 /* DetailTableViewController.swift */; };
+		06757E30214017EF00D93507 /* DetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06757E2F214017EF00D93507 /* DetailCellTableViewCell.swift */; };
 		06DDFD87213EE207004F2E94 /* AVStarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DDFD86213EE207004F2E94 /* AVStarDetailViewController.swift */; };
 		06E51B41213E47D200B7ACDE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E51B40213E47D200B7ACDE /* CardCell.swift */; };
 		06E51B43213E730D00B7ACDE /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E51B42213E730D00B7ACDE /* UIViewHelper.swift */; };
@@ -27,6 +29,8 @@
 		0658EE33213E29E30065D2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0658EE39213E2AF70065D2B8 /* AVStarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVStarTableViewController.swift; sourceTree = "<group>"; };
 		06757E2B213FFE9300D93507 /* AVStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVStar.swift; sourceTree = "<group>"; };
+		06757E2D214016F000D93507 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		06757E2F214017EF00D93507 /* DetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellTableViewCell.swift; sourceTree = "<group>"; };
 		06DDFD86213EE207004F2E94 /* AVStarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVStarDetailViewController.swift; sourceTree = "<group>"; };
 		06E51B40213E47D200B7ACDE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		06E51B42213E730D00B7ACDE /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				06E51B42213E730D00B7ACDE /* UIViewHelper.swift */,
 				06DDFD86213EE207004F2E94 /* AVStarDetailViewController.swift */,
 				06757E2B213FFE9300D93507 /* AVStar.swift */,
+				06757E2D214016F000D93507 /* DetailTableViewController.swift */,
+				06757E2F214017EF00D93507 /* DetailCellTableViewCell.swift */,
 			);
 			path = AVStar;
 			sourceTree = "<group>";
@@ -147,11 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06757E2E214016F000D93507 /* DetailTableViewController.swift in Sources */,
 				0658EE3A213E2AF70065D2B8 /* AVStarTableViewController.swift in Sources */,
 				06DDFD87213EE207004F2E94 /* AVStarDetailViewController.swift in Sources */,
 				06757E2C213FFE9300D93507 /* AVStar.swift in Sources */,
 				0658EE28213E29E20065D2B8 /* AppDelegate.swift in Sources */,
 				06E51B43213E730D00B7ACDE /* UIViewHelper.swift in Sources */,
+				06757E30214017EF00D93507 /* DetailCellTableViewCell.swift in Sources */,
 				06E51B41213E47D200B7ACDE /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

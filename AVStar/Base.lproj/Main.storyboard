@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -146,7 +145,7 @@
                                     <outlet property="AVStarImage" destination="BYB-NI-8Ws" id="IiP-HV-a9j"/>
                                     <outlet property="AVStarLink" destination="TD8-Pc-12e" id="oMi-or-QqU"/>
                                     <outlet property="AVStarName" destination="NYy-dT-2b8" id="lyh-sN-H4j"/>
-                                    <segue destination="Q7g-Af-NcU" kind="show" id="3oM-Q0-rWo"/>
+                                    <segue destination="3z4-Bx-FBz" kind="show" identifier="showAVStarDetail" id="ydI-mx-fDL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -162,39 +161,69 @@
             </objects>
             <point key="canvasLocation" x="1992.8" y="123.68815592203899"/>
         </scene>
-        <!--Star Detail View Controller-->
-        <scene sceneID="iLN-oW-wKx">
+        <!--Detail Table View Controller-->
+        <scene sceneID="Tvg-zr-Xhd">
             <objects>
-                <viewController id="Q7g-Af-NcU" customClass="AVStarDetailViewController" customModule="AVStar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Orz-ZS-OtH">
+                <tableViewController id="3z4-Bx-FBz" customClass="DetailTableViewController" customModule="AVStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0xs-Jf-bec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F63-PO-KiR">
-                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRedius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="F63-PO-KiR" firstAttribute="leading" secondItem="3mP-vY-bqP" secondAttribute="leading" id="3tj-SK-NA2"/>
-                            <constraint firstItem="3mP-vY-bqP" firstAttribute="bottom" secondItem="F63-PO-KiR" secondAttribute="bottom" id="4UQ-ou-o0Y"/>
-                            <constraint firstItem="3mP-vY-bqP" firstAttribute="trailing" secondItem="F63-PO-KiR" secondAttribute="trailing" id="eHJ-Ya-ipS"/>
-                            <constraint firstItem="F63-PO-KiR" firstAttribute="top" secondItem="3mP-vY-bqP" secondAttribute="top" id="v3e-Zl-VC6"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="3mP-vY-bqP"/>
-                    </view>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="佐藤遥希" id="scR-BH-qij">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRedius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCellTableViewCell" id="aTK-H3-U7s" customClass="DetailCellTableViewCell" customModule="AVStar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="328" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aTK-H3-U7s" id="qBU-yc-Jr7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7G-BO-Q3S">
+                                            <rect key="frame" x="31" y="11" width="26.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMj-8J-d1j">
+                                            <rect key="frame" x="303.5" y="11" width="40.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="q7G-BO-Q3S" firstAttribute="leading" secondItem="qBU-yc-Jr7" secondAttribute="leadingMargin" constant="15" id="EyM-8m-aO4"/>
+                                        <constraint firstItem="q7G-BO-Q3S" firstAttribute="centerY" secondItem="qBU-yc-Jr7" secondAttribute="centerY" id="Tez-Lc-S5J"/>
+                                        <constraint firstItem="hMj-8J-d1j" firstAttribute="centerY" secondItem="qBU-yc-Jr7" secondAttribute="centerY" id="cwc-z7-daR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hMj-8J-d1j" secondAttribute="trailing" constant="15" id="s9a-jJ-1wl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="FeildLabel" destination="q7G-BO-Q3S" id="h7Z-Lg-ygM"/>
+                                    <outlet property="valueLabel" destination="hMj-8J-d1j" id="7Pv-ga-OS3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3z4-Bx-FBz" id="bo5-a0-2qO"/>
+                            <outlet property="delegate" destination="3z4-Bx-FBz" id="rXK-Cq-YPj"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="headerImageView" destination="F63-PO-KiR" id="yfW-G1-wlI"/>
+                        <outlet property="headerImageView" destination="scR-BH-qij" id="Weo-3w-7aW"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u3z-od-rr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R65-Np-Qq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="124"/>
+            <point key="canvasLocation" x="2727" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8bP-01-rZn">
@@ -215,4 +244,7 @@
             <point key="canvasLocation" x="1250" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="佐藤遥希" width="474" height="686"/>
+    </resources>
 </document>
