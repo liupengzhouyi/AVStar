@@ -10,13 +10,24 @@ import UIKit
 
 class AVStarTableViewController: UITableViewController {
     
-    var starName = ["坛蜜", "星野明", "长泽雅美", "佐藤遥希", "吉泽明步", "米仓凉子", "纱仓真奈"]
-
-    var starImagename = ["坛蜜", "星野明", "长泽雅美", "佐藤遥希", "吉泽明步", "米仓凉子", "纱仓真奈"]
+//    var starName = ["坛蜜", "星野明", "长泽雅美", "佐藤遥希", "吉泽明步", "米仓凉子", "纱仓真奈"]
+//
+//    var starImagename = ["坛蜜", "星野明", "长泽雅美", "佐藤遥希", "吉泽明步", "米仓凉子", "纱仓真奈"]
+//
+//    var starAddress = ["日本", "日本", "日本", "日本", "日本", "日本", "日本"]
+//
+//    var favorites = Array(repeating: false, count: 7)
     
-    var starAddress = ["日本", "日本", "日本", "日本", "日本", "日本", "日本"]
+    var avStars = [
+    AVStar(name: "坛蜜", type: "无码", address: "日本", image: "坛蜜", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "星野明", type: "无码", address: "日本", image: "星野明", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "长泽雅美", type: "无码", address: "日本", image: "长泽雅美", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "佐藤遥希", type: "无码", address: "日本", image: "佐藤遥希", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "吉泽明步", type: "无码", address: "日本", image: "吉泽明步", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "米仓凉子", type: "无码", address: "日本", image: "米仓凉子", favorite: false, production: "《别墅趴》", text: "她的水特别多"),
+    AVStar(name: "纱仓真奈", type: "无码", address: "日本", image: "纱仓真奈", favorite: false, production: "《别墅趴》", text: "她的水特别多")
+    ]
     
-    var favorites = Array(repeating: false, count: 7)
     
 //    @IBAction func favBtnTop(_ sender: UIButton) {
 //        let btnPos = sender.convert(CGPoint.zero, to: self.tableView)
@@ -55,7 +66,8 @@ class AVStarTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return starName.count
+//        return starName.count
+        return avStars.count
     }
 
     
@@ -64,10 +76,13 @@ class AVStarTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! CardCell // as! 代表 强制转换
         
         // Configure the cell...
-        cell.AVStarName.text = starName[indexPath.row]
-        cell.AVStarAddress.text = starAddress[indexPath.row]
-        cell.AVStarImage.image = UIImage(named: starImagename[indexPath.row])
-        
+//        cell.AVStarName.text = starName[indexPath.row]
+//        cell.AVStarAddress.text = starAddress[indexPath.row]
+//        cell.AVStarImage.image = UIImage(named: starImagename[indexPath.row])
+        let avstar = avStars[indexPath.row]
+        cell.AVStarName.text = avstar.name
+        cell.AVStarAddress.text = avstar.address
+        cell.AVStarImage.image = UIImage(named: avstar.image)
         return cell
     }
     
@@ -86,17 +101,23 @@ class AVStarTableViewController: UITableViewController {
         let delAction = UIContextualAction(style: .destructive, title: "Delete") {
             (_, _, completion) in
             //移除所在行的内容
-            self.starName.remove(at: indexPath.row)
-            self.starAddress.remove(at: indexPath.row)
-            self.starImagename.remove(at: indexPath.row)
+//            self.starName.remove(at: indexPath.row)
+//            self.starAddress.remove(at: indexPath.row)
+//            self.starImagename.remove(at: indexPath.row)
+            
+            self.avStars.remove(at: indexPath.row)
+            
             //删除视图
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
         let shareAction = UIContextualAction(style: .normal, title: "Share") {
             (_,_, completion) in
-            let text = "这是AV老婆\(self.starName[indexPath.row])!"
-            let image = UIImage(named: self.starImagename[indexPath.row])!
+//            let text = "这是AV老婆\(self.starName[indexPath.row])!"
+//            let image = UIImage(named: self.starImagename[indexPath.row])!
+            let text = "这是AV老婆\(self.avStars[indexPath.row].name)!"
+            let image = UIImage(named: self.avStars[indexPath.row].image)!
+            
             let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
             self.present(ac, animated: true)
             completion(true)
@@ -167,7 +188,7 @@ class AVStarTableViewController: UITableViewController {
         //准备传输值
         let distination = segue.destination as! AVStarDetailViewController
         //设定传输值
-        distination.imageName = starImagename[row]
+        distination.imageName = avStars[row].image
     }
 
 }
